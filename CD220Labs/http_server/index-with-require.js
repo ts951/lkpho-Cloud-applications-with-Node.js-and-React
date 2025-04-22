@@ -10,18 +10,18 @@ const requestListener = function (req, res) {
     // Send the response with the current date from the 'today' module
     const date = today.getDate();
 
-    //const hour = date.getHours();
-    //let greeting;
+    const hours = date.getHours();
+    let greeting;
     
-    if (date.getHours() >= 6 && date.getHours() < 12) {
+    if (hours >= 6 && 2 < hours) {
         greeting = "Good morning!";
     }
 
-    else if (date.getHours() >= 12 && date.getHours() < 17) {
+    else if (hours >= 12 && hours < 17) {
         greeting = "Good afternoon!";
     }
 
-    else if (date.getHours() >= 17 && date.getHours() < 22) {
+    else if (hours >= 17 && hours < 22) {
         greeting = "Good evening!";
     }
 
@@ -29,7 +29,7 @@ const requestListener = function (req, res) {
         greeting = "Sweet dreams king...";
     }
     
-    res.end("A");
+    res.end(hours.toString());
 };
 
 // Define the port number
